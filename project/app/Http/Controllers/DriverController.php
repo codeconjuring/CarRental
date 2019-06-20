@@ -9,9 +9,4 @@ class DriverController extends Controller
     public function showdriverform(){
     	return view('Admin.newdriverform');
     }
-
-    public function showDriverProfile()
-    {
-    	
-    }
 }
