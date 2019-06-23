@@ -41,9 +41,22 @@ return [
             'provider' => 'users',
         ],
 
+        //admin guard
         'admin' => [
             'driver' => 'session',
             'provider' => 'admins',
+        ],
+
+        //driver or chauffeur guard
+        'driver' => [
+            'driver' => 'session',
+            'provider' => 'drivers',
+        ],
+
+        //passenger guard
+        'passenger' => [
+            'driver' => 'session',
+            'provider' => 'passengers',
         ],
 
         'api' => [
@@ -76,9 +89,22 @@ return [
             'model' => App\User::class,
         ],
 
+        //admin provider
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Admin::class,
+        ],
+
+        //driver or chauffeur provider
+        'drivers' => [
+            'driver' => 'eloquent',
+            'model' => App\Driver::class,
+        ],
+
+        //passenger provider
+        'passengers' => [
+            'driver' => 'eloquent',
+            'model' => App\Passenger::class,
         ],
 
         // 'users' => [
@@ -109,8 +135,22 @@ return [
             'expire' => 60,
         ],
 
+        //for admin password reset
         'admins' => [
             'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        //for diver or chauffeur password reset
+        'drivers' => [
+            'provider' => 'drivers',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'passengers' => [
+            'provider' => 'passengers',
             'table' => 'password_resets',
             'expire' => 60,
         ],
