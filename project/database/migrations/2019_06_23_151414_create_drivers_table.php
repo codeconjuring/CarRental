@@ -17,6 +17,7 @@ class CreateDriversTable extends Migration
             $table->bigIncrements('id');
             $table->string('first_name');
             $table->string('last_name');
+            $table->string('prof_img')->nullable();
             $table->string('phone')->unique();
             $table->string('email')->nillable();
             $table->timestamp('dob')->nullable(); //date of birth
