@@ -149,6 +149,7 @@ return [
             'expire' => 60,
         ],
 
+        //for passenger password reset
         'passengers' => [
             'provider' => 'passengers',
             'table' => 'password_resets',
