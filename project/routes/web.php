@@ -6,23 +6,23 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 // Admin Login Route
-Route::get('/admin-login','AdminController@adminloginform');
+Route::get('/admin-login','Admin/AdminController@adminloginform');
 // admin Login post
-Route::post('/admin-login','AdminController@adminloginhome')->name('admin_login');
+Route::post('/admin-login','Admin/AdminController@adminloginhome')->name('admin_login');
 // show admin Dashbord
-Route::get('/admin-dashboard','AdminHomeController@showadminhome');
+Route::get('/admin-dashboard','Admin/AdminHomeController@showadminhome');
 // admin log out
-Route::post('/admin-logout','AdminHomeController@adminlogout')->name('admin_logout');
+Route::post('/admin-logout','Admin/AdminHomeController@adminlogout')->name('admin_logout');
 // Add new car info
-Route::post('/save-car-info','AddcarController@savecarinfo');
+Route::post('/save-car-info','Admin/AddcarController@savecarinfo');
 // show all car list
-Route::get('/show-all-car','AddcarController@showallcars');
+Route::get('/show-all-car','Admin/AddcarController@showallcars');
 // Publication status car
-Route::get('/car-publication','AddcarController@publicationstatus');
+Route::get('/car-publication','Admin/AddcarController@publicationstatus');
 // car info Update
-Route::post('/update-car-info','AddcarController@carinfoupdate');
+Route::post('/update-car-info','Admin/AddcarController@carinfoupdate');
 // car delete info
-Route::get('/delete-car','AddcarController@deletecarinfo');
+Route::get('/delete-car','Admin/AddcarController@deletecarinfo');
 // Show all rental shop
 Route::get('/show-all-rental-shop','ManagerentalController@showallrantal')->name('show_all_rental_shop');
 // Rent car add route
