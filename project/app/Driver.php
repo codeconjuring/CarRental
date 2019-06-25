@@ -11,5 +11,20 @@ class Driver extends Model
      */
     protected $table='drivers';
 
+    /**
+     * Driving license informations of one particular driver
+     *
+     */
+    public function driving_license()
+    {
+    	return $this->hasOne(DrivingLicense::class);
+    }
 
+    /**
+     * Driving history of a particular driver
+     */
+    public function driving_history()
+    {
+    	return $this->hasOne(DrivingHistory::class,'driver_id','id');
+    }
 }
