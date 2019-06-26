@@ -16,7 +16,8 @@ class CreateDrivingLicensesTable extends Migration
         Schema::create('driving_licenses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('driver_id');
-            $table->string('license_number');
+            $table->bigInteger('location_id')->nullable();
+            $table->string('license_number')->nullable();
             $table->string('class')->nullable();
             $table->timestamp('exp_date')->nullable(); //expire date of license
             $table->string('prof_img')->nullable(); //profile picture name
